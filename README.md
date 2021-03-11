@@ -11,7 +11,7 @@ Puppeteer from v19 and later changed how the install of chromium is cached. In o
 },
 ```
 
-Note: Heroku states that if you have a postbuild script, the build script will not run. https://devcenter.heroku.com/articles/nodejs-support#customizing-the-build-process 
+Note: Heroku states that if you have a postbuild script, the build script will not run. https://devcenter.heroku.com/articles/nodejs-support#customizing-the-build-process
 
 So if you have a build script you can include it like so
 
@@ -34,10 +34,15 @@ If you want to use puppeteer with firefox instead of chrome, use this buildpack 
 To use the latest stable version run:
 
 ```sh-session
-$ heroku buildpacks:add jontewks/puppeteer
+$ heroku buildpacks:add planehq/puppeteer-heroku-buildpack
 ```
 
 You can also just add this repo's github url into your buildpacks through the UI.
+Or use the source code in this repository:
+
+```sh-session
+$ heroku buildpacks:add https://github.com/planehq/puppeteer-heroku-buildpack.git
+```
 
 ### Additional language support
 
