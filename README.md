@@ -11,6 +11,14 @@ Puppeteer from v19 and later changed how the install of chromium is cached. In o
 },
 ```
 
+Note: Heroku states that if you have a postbuild script, the build script will not run. https://devcenter.heroku.com/articles/nodejs-support#customizing-the-build-process 
+
+So if you have a build script you can include it like so
+
+```js
+"heroku-postbuild": "npm run build && mkdir  ./.cache && mv /app/.cache/puppeteer ./.cache"
+```
+
 Without the above, heroku will not include the new cache directory that puppeteer uses, and your app will fail saying it cannot find chromium.
 
 ## Info
